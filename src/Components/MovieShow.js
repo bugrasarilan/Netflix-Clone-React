@@ -13,10 +13,10 @@ function MovieShow({ week, setWeek }) {
   const backgroundImage = `https://image.tmdb.org/t/p/w500${week?.backdrop_path}`;
   return (
     <div className="">
-      <div className="absolute top-[40%] left-5 text-white text-2xl font-bold">
+      <div className="absolute top-[35%] left-5 text-white text-2xl font-bold">
         {week.title || week.name}
       </div>
-      <div className="absolute top-[46%] left-4 w-[500px] text-white">
+      <div className="absolute top-[46%] left-4 w-[300px] text-white">
         {week.overview}
       </div>
       <img
