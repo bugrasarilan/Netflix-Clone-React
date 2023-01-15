@@ -3,8 +3,10 @@ function MovieList({ movie, pop, rated }) {
   const photolist = "flex cursor-pointer  overflow-x-scroll";
   const body = "bg-black pt-3 text-white ";
   const photo = "relative  h-[190px] w-[140px]  m-1";
+  const name = "ml-3 text-xl font-bold"
   return (
     <div className={body}>
+      <p className={name}>NETFLİX ORİGİNAL</p>
       <div className={photolist}>
         {rated.map((rateds, index) => (
           <div key={index}>
@@ -16,6 +18,7 @@ function MovieList({ movie, pop, rated }) {
           </div>
         ))}
       </div>
+      <p className={name}>TOP</p>
       <div className={photolist}>
         {pop.map((pops, index) => (
           <div key={index}>
@@ -27,6 +30,7 @@ function MovieList({ movie, pop, rated }) {
           </div>
         ))}
       </div>
+      <p className={name}>TREND</p>
       <div className={photolist}>
         {movie.map((movies, index) => (
           <div key={index}>
