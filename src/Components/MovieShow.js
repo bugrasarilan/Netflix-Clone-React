@@ -10,7 +10,7 @@ function MovieShow({ week, setWeek }) {
     };
     Data();
   }, []);
-  const backgroundImage = `https://image.tmdb.org/t/p/w500${week?.backdrop_path}`;
+  const backgroundImage = `https://image.tmdb.org/t/p/w500${week.backdrop_path}`;
   return (
     <div className="">
       <div className="absolute top-[35%] left-5 text-white text-2xl font-bold">
