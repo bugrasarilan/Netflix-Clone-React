@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import MovieList from "./Components/MovieList";
+import getMovie from "./api";
+import MovieShow from "./Components/MovieShow";
+import Navbar from "./Components/Navbar";
 
 function App() {
+  const [movie, setMovie] = useState([]);
+  const [pop, setPop] = useState([]);
+  const [rated, setRated] = useState([]);
+  const [week, setWeek] = useState([]);
+ 
+    const Data = async () => {
+      const result = await getMovie();
+      setMovie((await result[0]).data.results);
+      setPop((await result[1]).data.results);
+      setRated((await result[2]).data.results);
+
+    };
+     useEffect(() => {
+    Data();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar/>
+      <MovieShow week={week} setWeek={setWeek}/>
+      <MovieList movie={movie} pop={pop} rated={rated} week={week}/>
     </div>
   );
 }
