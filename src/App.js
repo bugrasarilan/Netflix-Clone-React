@@ -15,7 +15,6 @@ function App() {
       setMovie((await result[0]).data.results);
       setPop((await result[1]).data.results);
       setRated((await result[2]).data.results);
-
     };
      useEffect(() => {
     Data();
@@ -25,7 +24,7 @@ function App() {
     <div>
       <Navbar/>
       <MovieShow week={week} setWeek={setWeek}/>
-      <MovieList movie={movie} pop={pop} rated={rated} week={week}/>
+      <MovieList movie={movie} pop={pop} rated={rated} />
     </div>
   );
 }
