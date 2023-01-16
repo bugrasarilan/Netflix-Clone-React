@@ -16,7 +16,7 @@ function MovieShow({ week, setWeek }) {
       <div className="absolute top-[35%] left-5 text-white text-2xl font-bold">
         {week.title || week.name}
       </div>
-      <div className="absolute top-[46%] left-4 w-[300px] text-white">
+      <div className="absolute top-[43%] left-4 w-[340px] text-white font-bold">
         {week.overview}
       </div>
       <img
