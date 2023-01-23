@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 function MovieList({ movie, pop, rated }) {
+  const [showModal, setShowModal] = useState(false); 
+  
+  const handleClick = () => {
+    setShowModal(!showModal);
+  };
+
+
   const URL = "https://image.tmdb.org/t/p/w500";
   const photolist = "flex cursor-pointer  overflow-x-scroll";
   const body = "bg-black pt-3 text-white ";
@@ -7,14 +16,17 @@ function MovieList({ movie, pop, rated }) {
   return (
     <div className={body}>
       <p className={name}>NETFLİX ORİGİNAL</p>
+
       <div className={photolist}>
         {rated.map((rateds, index) => (
           <div key={index}>
             <img
+            onClick={handleClick}
               className={photo}
               src={`${URL}${rateds.poster_path}`}
               alt={rateds.name}
             />
+    {showModal ===true ? (rateds.overview):""}
           </div>
         ))}
       </div>
@@ -35,11 +47,12 @@ function MovieList({ movie, pop, rated }) {
         {movie.map((movies, index) => (
           <div key={index}>
             <img
+            // onClick={showModal} 
               className={photo}
               src={`${URL}${movies.poster_path}`}
               alt={movies.name}
             />
-            {/* {movies.title} */}
+          {/* <div > {movies.overview}  </div>  */}
           </div>
         ))}
       </div>
