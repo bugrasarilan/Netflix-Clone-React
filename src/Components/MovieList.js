@@ -26,7 +26,7 @@ function MovieList({ movie, pop, rated }) {
               src={`${URL}${rateds.poster_path}`}
               alt={rateds.name}
             />
-    {showModal ===true ? (rateds.overview):""}
+    {/* {showModal ===true ? (rateds.overview):""} */}
           </div>
         ))}
       </div>
